@@ -1,0 +1,429 @@
+$color:blue;
+$fontSize:30px;
+$carousel-photos:"photos/carousel1.jpg",
+"photos/carousel2.jpg",
+"photos/carousel3.jpg",
+"photos/carousel4.jpg";
+$smallCarousel-photos:"photos/smallcarousel1.jpg",
+"photos/smallcarousel2.jpg",
+"photos/smallcarousel3.jpg",
+"photos/smallcarousel4.jpg";
+$banners:"photos/banner1.jpg",
+"photos/banner2.jpg",
+"photos/banner3.jpg",
+"photos/banner4.jpg";
+$smallBanners:"photos/smallBanner1.jpg",
+"photos/smallBanner2.jpg",
+"photos/smallBanner3.jpg",
+"photos/smallBanner4.jpg";
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-default {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar-default {
+        background-color: white !important;
+    }
+    nav {
+        height: 60px;
+        .navbar-header {
+            height: 60px;
+        }
+        .nav {
+            li {
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                a {
+                    color: black !important;
+                    text-align: center;
+                }
+            }
+            li:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white !important;
+                a {
+                    color: white !important;
+                }
+            }
+            li:focus {}
+            .active {
+                background-color: white;
+            }
+        }
+        .navbar-toggle {
+            margin-top: 20px;
+            padding: 0px;
+            border-top-width: 0px;
+            border-left-width: 0px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            span {
+                width: 30px !important;
+                height: 4px !important;
+            }
+            transition-duration:0.1s;
+            transition-timing-function: ease-out;
+        }
+        .navbar-toggle:hover,
+        .navbar-toggle:focus {
+            background-color: white !important;
+        }
+        .x-animation {
+            margin-top: 25px;
+            span:nth-child(2) {
+                position: absolute;
+                top: 4.2px;
+                transform: rotate(45deg);
+            }
+            span:nth-child(3) {
+                display: none;
+            }
+            span:nth-child(4) {
+                transform: rotate(-45deg);
+            }
+        }
+        img {
+            width: 30px;
+        }
+    }
+    @for $index from 1 to 5 {
+        #slide#{$index} {
+            background-image: url(nth($smallCarousel-photos, $index));
+            background-size: 100% 100%;
+            background-position: center;
+            transition: 0.7s;
+        }
+    }
+    .carousel-caption {
+        p {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    nav {
+        height: 90px;
+        transition: 0.7s;
+        .navbar-header {
+            height: 90px;
+        }
+        .nav {
+            li {
+                padding: 20px 5px 20px 5px;
+                font-size: 20px;
+                font-weight: 600;
+                a {
+                    color: white !important;
+                }
+                a:hover,
+                a:focus {
+                    background-color: rgba(0, 0, 0, 0) !important;
+                    border-bottom: 5px;
+                    border-bottom-style: solid;
+                    border-color: white;
+                }
+            }
+            .active>a {
+                background-color: rgba(0, 0, 0, 0) !important;
+            }
+        }
+        img {
+            width: 70px;
+        }
+        #fb-profile {
+            padding-top: 13px;
+            padding-bottom: 10px;
+            img {
+                width: 27px;
+            }
+        }
+    }
+    #colorNav {
+        background-color: white!important;
+        li {
+            a {
+                color: black !important;
+            }
+            a:hover,
+            a:focus {
+                border-bottom: 5px;
+                border-bottom-style: solid;
+                border-color: green;
+            }
+        }
+    }
+    #transparent {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+    @for $index from 1 to 5 {
+        #slide#{$index} {
+            background-image: url(nth($carousel-photos, $index));
+            background-size: 100% 100%;
+            background-position: center;
+            transition: 0.7s;
+        }
+        #slide#{$index}:hover {
+            background-size: 110% 110%;
+            transition: 3s;
+        }
+    }
+}
+
+#contact-form {
+    z-index: 9999;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    display: table;
+    background-color: white;
+    #close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+}
+
+.form-content {
+    display: table-cell;
+    vertical-align: middle;
+    input,
+    textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        border-width: 0px 0px 2px 0px;
+        border-color: black;
+        font-size: 22px;
+        font-style: italic;
+    }
+    input {
+        height: 35px;
+    }
+    input:focus,
+    textarea:focus {
+        outline: none;
+    }
+    button {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #009688;
+        border: medium none;
+        border-spacing: 0;
+        color: white;
+        font-size: 18px;
+    }
+}
+
+.navbar-default {
+    border: 0 none;
+}
+
+.jumbotron {
+    margin: 0px;
+    padding: 0px;
+    .carousel-inner {
+        .item {
+            height: 100vh !important;
+            width: 100%;
+            .carousel-caption {
+                position: absolute;
+                top: 0;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-align: center;
+                -moz-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                a {
+                    display: inline-block;
+                    background-color: white;
+                    margin-top: 20px;
+                    color: black;
+                    text-decoration: none;
+                    padding: 10px 20px 10px 20px;
+                    border-style: solid;
+                    border-color: white;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+                a:hover {
+                    background-color: rgba(0, 0, 0, 0);
+                    color: white;
+                }
+            }
+        }
+    }
+    .carousel-control {
+        width: 100px;
+    }
+}
+
+#promotions {
+    .col-md-8,
+    .col-md-4 {
+        height: 70vh;
+        padding: 0px;
+        background-repeat: no-repeat;
+        background-size: 105% 120%;
+    }
+    .bannerInfo1 {
+        padding-top: 20%;
+        margin-left: 6vw;
+    }
+    .bannerInfo2 {
+        padding-top: 18vh;
+        margin-right: 10vw;
+        text-align: right;
+    }
+    .bannerInfo3 {
+        padding-top: 15vh;
+        margin-left: 6vw;
+    }
+    .bannerInfo4 {
+        padding-top: 20%;
+        margin-right: 10vw;
+        text-align: right;
+    }
+    @media screen and (max-width: 700px) {
+        h1 {
+            color: white;
+            font-size: 40px;
+        }
+        @for $index from 1 to 5 {
+            #banner#{$index} {
+                background-image: url(nth($smallBanners, $index));
+                transition: 3s;
+                a {
+                    display: inline-block;
+                    background-color: rgba(0, 0, 0, 0);
+                    margin-top: 20px;
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 20px 10px 20px;
+                    border-style: solid;
+                    border-color: white;
+                    font-size: 22px;
+                    cursor: pointer;
+                    font-weight: 900;
+                }
+                a:hover {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 700px) {
+        h1 {
+            color: white;
+            font-size: 60px;
+        }
+        @for $index from 1 to 5 {
+            #banner#{$index} {
+                background-image: url(nth($banners, $index));
+                transition: 3s;
+                a {
+                    display: inline-block;
+                    margin-top: 20px;
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 20px 10px 20px;
+                    border-style: solid;
+                    border-color: white;
+                    font-size: 22px;
+                    cursor: pointer;
+                    font-weight: 900;
+                }
+                a:hover {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+            #banner#{$index}:hover {
+                background-size: 115% 130%;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(nth($banners, $index));
+            }
+        }
+    }
+    .productSlider {
+        .carousel {
+            height: 100%;
+            @media screen and (max-width: 700px) {
+                img {
+                    height: 65%;
+                    margin-top: 15px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                h3 {
+                    font-size: 20px;
+                    margin-top: 1px;
+                    margin-bottom: 1px;
+                }
+                text {
+                    font-size: 17px;
+                    color: rgb(169, 0, 69);
+                }
+                a {
+                    display: inline-block;
+                    margin: 2px;
+                    font-size: 10px
+                }
+            }
+            @media screen and (min-width: 700px) {
+                img {
+                    height: 68%;
+                    margin-top: 20px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                h3 {
+                    font-size: 25px;
+                    margin-top: 10px;
+                    margin-bottom: 2px;
+                }
+                text {
+                    font-size: 17px;
+                    color: rgb(169, 0, 69);
+                }
+                a {
+                    display: inline-block;
+                    margin: 2px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+            .carousel-control.left,
+            .carousel-control.right {
+                background-image: none;
+                background-color: white;
+                border-width: 0px;
+                margin: 0px;
+                span {
+                    color: black;
+                }
+            }
+            .carousel-indicators {
+                display: none;
+            }
+        }
+    }
+}
